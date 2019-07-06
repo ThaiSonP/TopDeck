@@ -27,5 +27,7 @@ CREATE TABLE heroes (
   magic_resistance INT,
   physical_damage INT,
   attack_speed INT,
-  range INT
+  range INT,
+  tier INT,
+  level INT
 );
