@@ -30,7 +30,8 @@ CREATE TABLE origin_skills(
 CREATE TABLE heroes (
   id SERIAL PRIMARY KEY,
   champion_name VARCHAR ,
-  origin INT REFERENCES origin(id),
+  origin_id INT REFERENCES origin(id),
+  origin_id_2 INT REFERENCES origin(id),
   class_id INT references class(id) ,
   class_id_2 INT references class(id) ,
   tier INT,
@@ -126,12 +127,28 @@ INSERT INTO origin_skills(origin_id, requirement, output) VALUES
 (13,3,'Attacks against ally Yordles have a 25% chance to miss.'),
 (13,6,'Attacks against ally Yordles have a 60% chance to miss.');
 
-INSERT INTO heroes(champion_name,origin,class_id ,class_id_2 ,tier,pool_count) VALUES
-('Aatrox',1,2,null,3,21),
-('Ahri',12,10,null,2,26),
-('Akali',7,1,null,4,13),
-('Anivia',4,4,null,5,10),
-('Ashe',4,8,null,3,21),
-('Aurelion-Sol',2,10,null,4,13),
-('Blitzcrank',10,3,null,2,26),
-('Brand',1,4,null,4,13),;
+INSERT INTO heroes(champion_name,origin_id,origin_id_2,class_id ,class_id_2 ,tier,pool_count) VALUES
+('Aatrox',1,null,2,null,3,21),
+('Ahri',12,null,10,null,2,26),
+('Akali',7,null,1,null,4,13),
+('Anivia',4,null,4,null,5,10),
+('Ashe',4,null,8,null,3,21),
+('Aurelion-Sol',2,null,10,null,4,13),
+('Blitzcrank',10,null,3,null,2,26),
+('Brand',1,null,4,null,4,13),
+('Braum',4,null,5,null,2,26),
+('ChoGath',11,null,3,null,4,13),
+('Darius',5,null,7,null,1,39),
+('Draven',5,null,2,null,4,13),
+('Elise',1,null,9,null,2,26),
+('Evelynn',1,null,1,null,3,21),
+('Fiora',6,null,2,null,1,39),
+('Gangplank',8,null,2,6,3,21),
+('Garen',6,null,7,null,1,39),
+('Gnar',12,13,9,null,4,13),
+('Graves',8,null,6,null,1,39),
+('Karthus',9,null,10,null,5,10),
+('Kassadin',11,null,10,null,1,39),
+('Katarina',5,null,1,null,3,21),
+('Kayle',6,null,7,null,5,10),
+;
