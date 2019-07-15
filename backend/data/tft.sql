@@ -41,7 +41,7 @@ CREATE TABLE heroes (
 CREATE TABLE heroes_stats (
   id SERIAL PRIMARY KEY,
   hero_id INT REFERENCES heroes(id) ,
-  cost INT,
+  level INT,
   health INT,
   mana INT,
   DPS int,
@@ -51,9 +51,10 @@ CREATE TABLE heroes_stats (
   attack_range INT,
   magic_resistance INT,
   armor INT,
-  level INT,
   special VARCHAR,
-  special_damage INT
+  special_physical INT,
+  special_ability INT,
+  special_health int
 );
 
 INSERT INTO class(class) VALUES
@@ -151,4 +152,44 @@ INSERT INTO heroes(champion_name,origin_id,origin_id_2,class_id ,class_id_2 ,tie
 ('Kassadin',11,null,10,null,1,39),
 ('Katarina',5,null,1,null,3,21),
 ('Kayle',6,null,7,null,5,10),
+('Kennen',7,13,4,null,3,21),
+('KhaZix',11,null,1,null,1,39),
+('Kindred',9,null,8,null,4,13),
+('Leona',6,null,5,null,4,13),
+('Lissandra',4,null,4,null,2,26),
+('Lucian',6,null,6,null,2,26),
+('Lulu',13,null,10,null,2,26),
+('Miss-Fortune',8,null,6,null,5,10),
+('Mordekaiser',9,null,7,null,1,39),
+('Morgana',1,null,10,null,3,21),
+('Nidalee',12,null,9,null,1,39),
+('Poppy',13,null,7,null,3,21),
+('Pyke',8,null,1,null,2,26),
+('RekSai',11,null,3,null,2,26),
+('Rengar',12,null,1,null,3,21),
+('Sejuani',4,null,7,null,4,13),
+('Shen',7,null,2,null,2,26),
+('Shyvana',2,null,9,null,3,21),
+('Swain',5,1,9,null,5,10),
+('Tristana',13,null,6,null,1,39),
+('Twisted-Fate',8,null,10,null,2,26),
+('Varus',1,null,8,null,2,26),
+('Vayne',6,null,8,null,1,39),
+('Veigar',13,null,10,null,3,21),
+('Volibear',4,null,3,null,3,21),
+('Warrick',12,null,3,null,1,39),
+('Yasuo',3,null,2,null,5,10),
+('Zed',7,null,1,null,2,26)
+;
+
+INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical_chance,attack_speed,attack_range,magic_resistance,armor,special,special_physical,special_ability,special_health) VALUES
+(1,1,650,100,42,65,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',350,null,null),
+(1,2,1170,100,76,117,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',600,null,null),
+(1,3,2340,100,152,234,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',850,null,null),
+(2,1,450,75,28,50,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',null,100,null),
+(2,2,810,75,50,90,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',null,175,null),
+(2,3,1620,75,99,180,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',null,250,null),
+(3,1,700,25,53,70,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',null,200,null),
+(3,2,1260,25,95,126,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',null,375,null),
+(3,3,2520,25,189,252,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',null,550,null)
 ;
