@@ -5,7 +5,8 @@ CREATE DATABASE tft;
 
 CREATE TABLE class(
   id SERIAL PRIMARY KEY,
-  class VARCHAR
+  class VARCHAR,
+  blurb VARCHAR
 );
 
 CREATE TABLE class_skills(
@@ -17,7 +18,8 @@ CREATE TABLE class_skills(
 
 CREATE TABLE origin(
   id SERIAL PRIMARY KEY,
-  origin VARCHAR
+  origin VARCHAR,
+  blurb VARCHAR
 );
 
 CREATE TABLE origin_skills(
@@ -57,17 +59,17 @@ CREATE TABLE heroes_stats (
   special_health int
 );
 
-INSERT INTO class(class) VALUES
-('Assassin'),
-('Blademaster'),
-('Brawler'),
-('Elementalist'),
-('Guardian'),
-('Gunslinger'),
-('Knight'),
-('Ranger'),
-('Shapeshifter'),
-('Sorcerer');
+INSERT INTO class(class, blurb) VALUES
+('Assassin','Assassins leap to the farthest enemy at the start of combat & deal bonus Critical Strike Damage.'),
+('Blademaster','Blademasters have a chance to strike additional times each attack.'),
+('Brawler','Brawlers receive Bonus Maximum Health.'),
+('Elementalist','Elementalists gain mana from attacks and summons unit at the start of combat.'),
+('Guardian','At the start of combat, all Guardians and adjacent allies receive armor.'),
+('Gunslinger','After attacking, Gunslingers have a chance to fire additional attacks.'),
+('Knight','Knights block damage from basic attacks.'),
+('Ranger','Rangers have a chance to double their attack speed when attacking for the next 3 seconds.'),
+('Shapeshifter','Shapeshifters gain bonus maximum Health when they transform.'),
+('Sorcerer','Sorcerers gain double mana from attacking. Allies have bonus spell damage.');
 
 INSERT INTO class_skills(class_id, requirement, output) VALUES
 (1,3,'Assassins leap to the farthest enemy at the start of combat and deal additional +150% critical strike damage'),
@@ -89,20 +91,20 @@ INSERT INTO class_skills(class_id, requirement, output) VALUES
 (10,3,'Sorcerers gain double mana from attacking and allies have increased +35% spell damage'),
 (10,6,'Sorcerers gain double mana from attacking and allies have increased +100% spell damage');
 
-INSERT INTO origin (origin) VALUES
-('Demon'),
-('Dragon'),
-('Exile'),
-('Glacial'),
-('Imperial'),
-('Noble'),
-('Ninja'),
-('Pirate'),
-('Phantom'),
-('Robot'),
-('Void'),
-('Wild'),
-('Yordle');
+INSERT INTO origin (origin,blurb) VALUES
+('Demon','Attacks from Demons have a chance on hit to burn all of an enemys mana & deal that much as true damage.'),
+('Dragon','Dragons are immune to Magic damage.'),
+('Exile','If an Exile has no adjacent allies at the start of combat, they gain a shield.'),
+('Glacial','Attacks from Glacial have a chance to stun for 2 seconds.'),
+('Imperial','Imperials deal double damage.'),
+('Noble','Noble grants +100 Armor and 35 health per attack.'),
+('Ninja','Ninjas gain a percentage of Attack Damage'),
+('Pirate','Earn additional gold after combat against another player by a chest left behind at the end of the round.'),
+('Phantom','Curse a random enemy at the start of combat.'),
+('Robot','Robots start combat at full mana.'),
+('Void','All basic attacks ignore enemys Armor.'),
+('Wild','Attacks generate stacks of Fury (stacks up to 5 times) with every attack. Each stack of Fury gives 8% Attack Speed.'),
+('Yordle','Attacks against ally Yordles have a chance to miss.');
 
 INSERT INTO origin_skills(origin_id, requirement, output) VALUES
 (1,2,'Attacks from Demons have a 40% chance to burn all of an enemys mana and deal that much true damage'),
