@@ -30,7 +30,7 @@ class Heros extends Component {
 
           <div key={i} className ="hero">
             <Link to={`/hero/${el.id}` }>
-              <img src= {index[el.champion_name]} alt =''/>
+              <img src={index.Ahri} alt =''/>
             </Link>
             <br/>
             <Link to={`/hero/${el.id}` }>
@@ -44,6 +44,7 @@ class Heros extends Component {
 
   componentDidMount(){
     this.getInfo()
+    // this.makeIcons()
   }
 
   render(){
