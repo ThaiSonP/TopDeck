@@ -54,8 +54,7 @@ CREATE TABLE heroes_stats (
   magic_resistance INT,
   armor INT,
   special VARCHAR,
-  special_physical INT,
-  special_ability INT,
+  special_damage INT,
   special_health int
 );
 
@@ -184,14 +183,17 @@ INSERT INTO heroes(champion_name,origin_id,origin_id_2,class_id ,class_id_2 ,tie
 ('Zed',7,null,1,null,2,26)
 ;
 
-INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical_chance,attack_speed,attack_range,magic_resistance,armor,special,special_physical,special_ability,special_health) VALUES
-(1,1,650,100,42,65,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',350,null,null),
-(1,2,1170,100,76,117,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',600,null,null),
-(1,3,2340,100,152,234,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',850,null,null),
-(2,1,450,75,28,50,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',null,100,null),
-(2,2,810,75,50,90,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',null,175,null),
-(2,3,1620,75,99,180,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',null,250,null),
-(3,1,700,25,53,70,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',null,200,null),
-(3,2,1260,25,95,126,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',null,375,null),
-(3,3,2520,25,189,252,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',null,550,null)
+INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical_chance,attack_speed,attack_range,magic_resistance,armor,special,special_damage,special_health) VALUES
+(1,1,650,100,42,65,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',350,null),
+(1,2,1170,100,76,117,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',600,null),
+(1,3,2340,100,152,234,25,65,1,20,25,'Aatrox cleaves the area in front of him, dealing damage to enemies inside it.',850,null),
+(2,1,450,75,28,50,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',100,null),
+(2,2,810,75,50,90,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',175,null),
+(2,3,1620,75,99,180,25,55,3,20,20,'Ahri fires an orb in a line that returns to her, damaging enemies it passes through.',250,null),
+(3,1,700,25,53,70,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',200,null),
+(3,2,1260,25,95,126,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',375,null),
+(3,3,2520,25,189,252,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',550,null),
+(16,1,700,100,33,55,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',200,null),
+(16,2,1180,100,59,99,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',325,null),
+(16,3,2260,100,119,198,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',450,null)
 ;
