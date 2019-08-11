@@ -57,6 +57,7 @@ CREATE TABLE heroes_stats (
   special_damage INT,
   special_health int
 );
+-- data needs to be updated every week
 
 INSERT INTO class(class, blurb) VALUES
 ('Assassin','Assassins leap to the farthest enemy at the start of combat & deal bonus Critical Strike Damage.'),
@@ -193,6 +194,12 @@ INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical
 (3,1,700,25,53,70,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',200,null),
 (3,2,1260,25,95,126,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',375,null),
 (3,3,2520,25,189,252,25,75,1,20,20,'Akali throws shurikens in front of her, dealing damage.',550,null),
+(4,1,650,100,24,40,25,60,3,20,20,'Anivia channels a large hailstorm, damaging enemies inside of it. Storm Duration: 8 seconds ',700,null),
+(4,2,1170,100,43,72,25,60,3,20,20,'Anivia channels a large hailstorm, damaging enemies inside of it. Storm Duration: 8 seconds ',950,null),
+(4,3,2340,100,86,144,25,60,3,20,20,'Anivia channels a large hailstorm, damaging enemies inside of it. Storm Duration: 8 seconds ',1200,null),
+(5,1,550,100,46,65,25,70,4,20,20,'Ashe fires an arrow that travels across the map. After a long delay it stuns and damages a random enemy.',200,null),
+(5,2,990,100,82,117,25,70,4,20,20,'Ashe fires an arrow that travels across the map. After a long delay it stuns and damages a random enemy.',400,null),
+(5,3,1980,100,164,234,25,70,4,20,20,'Ashe fires an arrow that travels across the map. After a long delay it stuns and damages a random enemy.',600,null),
 (16,1,700,100,33,55,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',200,null),
 (16,2,1180,100,59,99,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',325,null),
 (16,3,2260,100,119,198,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',450,null)

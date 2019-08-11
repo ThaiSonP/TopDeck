@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-// import banner from "../../Images/banner.jpg";
+import './heros.css';
 import index from '../../Images/Icons/index.js'
 
 class Heros extends Component {
@@ -26,7 +26,7 @@ class Heros extends Component {
       return(
         heroes.map((el,i)=>{
         return(
-          <div key={i} className ="hero">
+          <div key={i} className ="Hero">
             <Link to={`/hero/${el.id}` }>
               <img src= {index[el.champion_name]} alt =''/>
             </Link>

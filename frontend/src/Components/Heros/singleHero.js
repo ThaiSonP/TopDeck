@@ -9,6 +9,7 @@ class SingleHero extends Component {
     super(props);
     this.state=({
       heroId: this.props.match.params.id
+      // origin_id: null
     })
   }
   getData = async (id)=>{
@@ -31,7 +32,7 @@ class SingleHero extends Component {
   }
 
   render(){
-    const {name,class_id,className}=this.state
+    const {name,class_id,className,origin_id,originName}=this.state
     return(
       <div>
         <div>
@@ -42,14 +43,14 @@ class SingleHero extends Component {
         </div>
         <div>
           Class 1:
-            <Link to={`/hero/${class_id}` }>
-              {className}
+            <Link to={`/class/${ class_id}` }>
+              { className}
             </Link>
         </div>
         <div>
-          Class 2:
-            <Link to={`/hero/${class_id}` }>
-              {className}
+          Origin 1:
+            <Link to={`/origin/${ origin_id}` }>
+              { originName}
             </Link>
         </div>
       </div>

@@ -20,12 +20,13 @@ const getAllClass = (req,res,next)=>{
 
 const getHeroes = (req,res,next) =>{
   let classID = parseInt(req.params.id)
-  db.any('SELECT heroes.champion_name, heroes.id as hero_id, class.id as class_id, heroes.class_id_2 as class_id_2 FROM class JOIN heroes ON heroes.class_id = class.id WHERE heroes.class_id = $1 OR heroes.class_id_2 = $1',[classID])
+  db.any('SELECT ,heroes.champion_name, heroes.id as hero_id, class.id as class_id, heroes.class_id_2 as class_id_2 FROM class JOIN heroes ON heroes.class_id = class.id WHERE heroes.class_id = $1 OR heroes.class_id_2 = $1',[classID])
   .then(heroes=>{
     res.status(200)
     .json({
       status: 'success',
-      heroes: heroes
+      heroes: heroes,
+      blurb: heroes[0].blurb
     })
   })
   .catch(err=>{
