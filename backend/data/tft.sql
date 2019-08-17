@@ -56,7 +56,22 @@ CREATE TABLE heroes_stats (
   special VARCHAR,
   special_damage INT,
   special_health int
-);
+)
+
+Create Table primary_items(
+  id SERIAL PRIMARY KEY,
+  item VARCHAR,
+  blurb VARCHAR
+)
+
+CREATE TABLE combined_items(
+  id SERIAL PRIMARY KEY,
+  item VARCHAR,
+  item1 INT REFERENCES primary_items (id),
+  item2 INT REFERENCES primary_items (id),
+  blurb VARCHAR
+)
+;
 -- data needs to be updated every week
 
 INSERT INTO class(class, blurb) VALUES
@@ -203,4 +218,15 @@ INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical
 (16,1,700,100,33,55,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',200,null),
 (16,2,1180,100,59,99,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',325,null),
 (16,3,2260,100,119,198,25,65,1,20,20,'Gangplank periodically creates barrels. On cast, Gangplank detonates the barrels, damaging nearby enemies. (applies on-hit effects)',450,null)
+;
+
+INSERT INTO primary_items(item,blurb) VALUES
+('B.F.Sword','+ 20 Attack Damage'),
+('Chain Vest','+ 20 Armor'),
+('Giants Belt','+ 200 Health'),
+('Needlessly Large Rod','+ 20 Spell Power'),
+('Negatron Cloak','+ 20 Magic Resist'),
+('Recurve Bow','+ 20 Attack Speed'),
+('Spatula','You Will Get Special Ability'),
+('Tear of the Goddess','+ 20 Starting Mana')
 ;
