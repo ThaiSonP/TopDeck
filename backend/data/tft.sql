@@ -222,11 +222,11 @@ INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical
 
 INSERT INTO primary_items(item,blurb) VALUES
 ('BFSword','+ 20 Attack Damage'),
-('Chain Vest','+ 20 Armor'),
-('Giants Belt','+ 200 Health'),
-('Needlessly Large Rod','+ 20 Spell Power'),
-('Negatron Cloak','+ 20 Magic Resist'),
-('Recurve Bow','+ 20 Attack Speed'),
+('ChainVest','+ 20 Armor'),
+('GiantsBelt','+ 200 Health'),
+('NeedlesslyLargeRod','+ 20 Spell Power'),
+('NegatronCloak','+ 20 Magic Resist'),
+('RecurveBow','+ 20 Attack Speed'),
 ('Spatula','You Will Get Special Ability'),
 ('TearOfTheGoddess','+ 20 Starting Mana')
 ;

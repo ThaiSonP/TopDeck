@@ -1,7 +1,8 @@
 const {db} = require ('../data/index')
 
 const getAllItems = (req,res,next)=>{
-  db.any('select * from primary_items join combined_items on item1 = primary_items.id ')
+  let item1 = parseInt(req.params.id)
+  db.any('select * from combined_items where  combined_items.item1 = $1 ',[item1])
   .then(items=>{
     res.status(200).json({
       status:'success',
@@ -18,9 +19,28 @@ const getAllItems = (req,res,next)=>{
   })
 }
 
+const getAllPrimary = (req,res,next)=>{
+  db.any('select * from primary_items')
+  .then(primary=>{
+    res.status(200).json({
+      status:"success",
+      items:primary
+    })
+  })
+  .catch(err=>{
+    console.log(err)
+    res.json({
+      status:'failed',
+      message: err
+    })
+    return next(err)
+  })
+}
+
 // const getOneItem = (req,res,next=>{
 //   db.any ('select * from primary_items ')
 // })
 module.exports={
-  getAllItems
+  getAllItems,
+  getAllPrimary
 }
