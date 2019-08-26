@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
-import index from '../../Images/Icons/index.js'
+import index from '../../Images/ChampionIcons/index.js'
 
 
 class SingleClass extends Component {

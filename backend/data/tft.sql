@@ -56,13 +56,13 @@ CREATE TABLE heroes_stats (
   special VARCHAR,
   special_damage INT,
   special_health int
-)
+);
 
 Create Table primary_items(
   id SERIAL PRIMARY KEY,
   item VARCHAR,
   blurb VARCHAR
-)
+);
 
 CREATE TABLE combined_items(
   id SERIAL PRIMARY KEY,
@@ -221,12 +221,50 @@ INSERT INTO heroes_stats (hero_id,level,health,mana,DPS,physical_damage,critical
 ;
 
 INSERT INTO primary_items(item,blurb) VALUES
-('B.F.Sword','+ 20 Attack Damage'),
+('BFSword','+ 20 Attack Damage'),
 ('Chain Vest','+ 20 Armor'),
 ('Giants Belt','+ 200 Health'),
 ('Needlessly Large Rod','+ 20 Spell Power'),
 ('Negatron Cloak','+ 20 Magic Resist'),
 ('Recurve Bow','+ 20 Attack Speed'),
 ('Spatula','You Will Get Special Ability'),
-('Tear of the Goddess','+ 20 Starting Mana')
+('TearOfTheGoddess','+ 20 Starting Mana')
 ;
+
+INSERT INTO combined_items (item,item1,item2,blurb) VALUES
+('BladeOfTheRuinedKing',6 ,7,'Attack Speed +20. Wearer is also a Blademaster'),
+('TheBloodthirster',1 ,5,'Attacks heal for 50% of physical damage'),
+('CursedBlade',6 ,5,'Attacks on-hit have a low chance to reduce enemy''''s star level by 1 for the rest of combat'),
+('Darkin',7 ,8,'Extra Starting mana +20. Wearer is also a Demon'),
+('DragonsClaw',5 ,5,'Gain 83% resistance to magic damage'),
+('ForceOfNature',7 ,7,'Gain +1 team size'),
+('FrozenHeart',2 ,8,'Adjacent enemies lose 25% attack speed'),
+('ForzenMallet',3 ,7,'Extra HP +200. Wearer is also a Glacial'),
+('GuardianAngel',1 ,2,'Wearer revives with 800 HP'),
+('GuinsoosRageblade',6 ,4,'Attack grant 5% Attack Speed. Stacks infinitely'),
+('HextechGunblade',1 ,4,'Heal for 33% of all damage dealt'),
+('Hush',5 ,8,'33% chance on hit to prevent the enemy champion from gaining mana for 4 seconds'),
+('InfinityEdge',1 ,1,'Critical Strikes deal +200 % damage'),
+('IonicSpark',4 ,5,'Whenever an enemy casts a spell, they take 125 damage'),
+('KnightsVow',2 ,7,'Extra Armor +20. Wearer is also a Knight'),
+('LocketOfTheIronSolari',2 ,4,'On start of combat, allies two spaces to the left and right gain a shield of 250 for 6 seconds.'),
+('LudensEcho',4 ,8,'Spells deal 200 splash damage on hit'),
+('Morellonomicon',3 ,4,'Spells deal burn damage equal to 20% of the enemy''''s maximum health over 10s and prevent healing'),
+('PhantomDancer',6 ,2,'Wearer dodges all Critical Strikes'),
+('RabadonsDeathcap',4 ,4,'Wearer''''s Spell Power stat is amplified by 50%'),
+('RapidFirecannon',6 ,6,'Wearer''''s attacks cannot be dodged. Attack Range is doubled'),
+('RedBuff',2 ,3,'Attacks deal 13% of the enemy''''s maximum Health as burn damage over 10s and prevent healing'),
+('Redemption',3 ,8,'On crossing below 25% health, heal all nearby allies for 1500 Health'),
+('RunaansHurricane',5 ,7,'Summon a spirit who mirrors your attacks, dealing 75% Damage'),
+('SeraphsEmbrace',8 ,8,'Wearer regains 20 mana after spellcast'),
+('SpearOfShojin',1 ,8,'After casting, wearer gains 15% of its max Mana per attack'),
+('StatikkShiv',6 ,8,'Every 3rd attack deals 100 splash magical damage to 3 enemies.'),
+('SwordBreaker',2 ,5,'Attacks have a chance to disarm for 4s'),
+('SwordOfTheDivine',6 ,1,'Each second, the wearer has a 7% chance to gain 100% Critical Strike'),
+('Thornmail',2 ,2,'Reflect 100% of damage mitigated from attacks'),
+('TitanicHydra',6 ,3,'Attacks deal 10% of the wearer''''s max Health as splash damage'),
+('WarmogsArmor',3 ,3,'Wearer regenerates 6% max Health per second.'),
+('YoumuusGhostblade',1 ,7,'Extra Attack Damage +20. Wearer is also an Assassin'),
+('Yuumi',4 ,7,'Extra Spell Power +20%. Wearer is also a Sorcerer'),
+('ZekesHerald',1 ,3,'At the start of combat, allies within the same row gain +15% Attack Speed for the rest of combat'),
+('Zephyr',3 ,5,'On start of combat, banish an enemy for 5 seconds');
