@@ -13,10 +13,10 @@ class SingleOrigin extends Component {
   }
   getData = async (id)=>{
     await axios.get(`/origin/${id}`).then(res=>{
-      console.log(res.data.heroes)
+      // console.log(res.data.heroes)
       this.setState({
         heros: res.data.heroes,
-        origin: res.data.heroes[0].origin
+        origin: res.data.origin
       })
     })
   }
@@ -46,11 +46,11 @@ class SingleOrigin extends Component {
   }
 
   render(){
-    const {heros}=this.state
+    const {heros,origin}=this.state
 
     return(
       <div>
-        This is a list of all {this.state.origin}s
+        This is a list of all {origin}s
         {this.makeIcons(heros)}
       </div>
     )

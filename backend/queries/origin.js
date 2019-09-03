@@ -25,7 +25,7 @@ const getHeroes = (req,res,next) =>{
     res.status(200)
     .json({
       status: 'success',
-      // origin: origin.origin,
+      origin: heroes[0]['origin'],
       heroes: heroes
     })
   })
