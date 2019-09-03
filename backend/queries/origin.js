@@ -20,11 +20,12 @@ const getAllOrigins = (req,res,next)=>{
 
 const getHeroes = (req,res,next) =>{
   let originID = parseInt(req.params.id)
-  db.any('SELECT heroes.champion_name, heroes.id as hero_id, origin.id as origin_id, heroes.origin_id_2 as origin_id_2 FROM origin JOIN heroes ON heroes.origin_id = origin.id WHERE heroes.origin_id = $1 OR heroes.origin_id_2 = $1',[originID])
+  db.any('SELECT heroes.champion_name, heroes.id as hero_id, origin.origin, origin.id as origin_id, heroes.origin_id_2 as origin_id_2 FROM origin JOIN heroes ON heroes.origin_id = origin.id WHERE heroes.origin_id = $1 OR heroes.origin_id_2 = $1',[originID])
   .then(heroes=>{
     res.status(200)
     .json({
       status: 'success',
+      // origin: origin.origin,
       heroes: heroes
     })
   })

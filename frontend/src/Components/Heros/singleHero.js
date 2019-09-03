@@ -49,7 +49,7 @@ class SingleHero extends Component {
         </div>
         <div>
           Origin 1:
-            <Link to={`/origin/${ origin_id}` }>
+            <Link to={`/origins/${ origin_id}` }>
               { originName}
             </Link>
         </div>

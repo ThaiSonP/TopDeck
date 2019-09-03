@@ -37,10 +37,30 @@ const getAllPrimary = (req,res,next)=>{
   })
 }
 
+const getAPrimary = (req,res,next)=>{
+  const id = parseInt(req.params.id)
+  db.any('select * from primary_items where primary_items.id = $1',[id])
+  .then(item =>{
+    res.status (200).json({
+      status:'success',
+      item:item
+    })
+  })
+  .catch(err=>{
+    console.log(err)
+    res.json({
+      status:'failed',
+      message: err
+    })
+    return next(err)
+  })
+}
+
 // const getOneItem = (req,res,next=>{
 //   db.any ('select * from primary_items ')
 // })
 module.exports={
   getAllItems,
-  getAllPrimary
+  getAllPrimary,
+  getAPrimary
 }

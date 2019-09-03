@@ -10,7 +10,7 @@ class NavBar extends Component{
     <div className = 'nav'>
       <NavLink className = 'nav' to ='/'>Home</NavLink>
       <NavLink className = 'nav' to ='/hero'>Hero</NavLink>
-      <NavLink className = 'nav' to ='/origin'>Origin</NavLink>
+      <NavLink className = 'nav' to ='/origins'>Origin</NavLink>
       <NavLink className = 'nav' to ='/class'>Class</NavLink>
       <NavLink className = 'nav' to ='/item'>Item</NavLink>
       <NavLink className = 'nav' to ='/demo'>Demo</NavLink>
