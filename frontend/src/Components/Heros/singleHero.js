@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
 import index from '../../Images/ChampionIcons/index.js'
+import Stats from './stats.js'
 
 
 class SingleHero extends Component {
@@ -14,7 +15,7 @@ class SingleHero extends Component {
   }
   getData = async (id)=>{
     await axios.get(`/hero/${id}`).then(res=>{
-      console.log(res.data.heroes)
+      // console.log(res.data.heroes)
       this.setState({
         info:res.data.heroes,
         name:res.data.heroes[0].champion_name,
@@ -24,6 +25,7 @@ class SingleHero extends Component {
         originName:res.data.heroes[0].origin,
         origin_id:res.data.heroes[0].origin_id,
         origin_id_2:res.data.heroes[0].origin_id_2,
+        stats:res.data.heroes
       })
     })
   }
@@ -32,7 +34,8 @@ class SingleHero extends Component {
   }
 
   render(){
-    const {name,class_id,className,origin_id,originName}=this.state
+    const {name,class_id,className,origin_id,originName,stats}=this.state
+
     return(
       <div>
         <div>
@@ -53,6 +56,7 @@ class SingleHero extends Component {
               { originName}
             </Link>
         </div>
+        <Stats stats={stats}/>
       </div>
     )
   }
